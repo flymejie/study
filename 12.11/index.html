@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="function.js"></script>
+<style>
+    .circle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #cccccc;
+        /*position: absolute;
+        left:0;
+        top:0;
+        transition: all ease .5s;*/
+    }
+
+    .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+    }
+</style>
+<body>
+<div class="box">
+    <p></p>
+</div>
+
+<span></span>
+</body>
+</html>
+<script>
+    $(function () {
+        let box = $('.box');
+        let divs = $('<div>');
+        divs.innerText = 'hello';
+       /* box[0].appendChild(divs);*/
+       /*prepend(box[0],divs);
+       append(box[0],);
+       box[0].append();
+       box[0].prepend();*/
+       box[0].prepend(divs);
+
+
+    })
+
+</script>
