@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function say(value){
+        console.log(value);
+//        alert(value)
+    }
+    console.log(say);
+    console.log(say('hi js'));
+//    alert(say('hi js'));
+    var s = 'hello, world';
+    console.log(s.indexOf('World'));
+    //    console.log(s.indexOf('world')); // 返回7
+    var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+    // 从索引2开始删除3个元素,然后再添加两个元素:
+    console.log(arr.splice(2, 3, 'Google', 'Facebook')); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
+    console.log(arr); // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+    // 只删除,不添加:
+    arr.splice(2, 2); // ['Google', 'Facebook']
+    arr; // ['Microsoft', 'Apple', 'Oracle']
+    // 只添加,不删除:
+    arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
+    arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+</script>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/Project.css">
+    <link rel="stylesheet" href="css/swiper/swiper.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/fullPage/jquery.fullPage.js"></script>
+    <script src="js/fullPage/jquery.easings.min.js"></script>
+    <script src="js/swiper/swiper.js"></script>
+
+</head>
+<style>
+    .section {
+        text-align: center;
+        font: 50px "Microsoft Yahei";
+        color: #fff;
+    }
+
+    .section1 p {
+        position: relative;
+        left: -120%;
+    }
+
+    .section2 p {
+        position: relative;
+        left: -120%;
+    }
+
+    .section3 p {
+        position: relative;
+        bottom: -120%;
+    }
+
+    .section4 p {
+        display: none;
+    }
+</style>
+
+<body>
+<!--header start-->
+<header>
+    <nav class="container">
+        <ul>
+            <li class="box-slide">
+                <a href="">美味食谱</a>
+                <ul class="slide">
+                    <li><a href="">2</a></li>
+                </ul>
+            </li>
+            <li class="box-slide">
+                <a href="">四季养生</a>
+                <ul class="slide">
+                    <li><a href="">2</a></li>
+                </ul>
+            </li>
+            <li class="box-slide">
+                <a href="">杰出美食</a>
+                <ul class="slide">
+                    <li><a href="">2</a></li>
+                </ul>
+            </li>
+            <li class="box-slide">
+                <a href="">美食杂谈</a>
+                <ul class="slide">
+                    <li><a href="">2</a></li>
+                </ul>
+            </li>
+            <li class="box-slide">
+                <a href="">关于我们</a>
+                <ul class="slide">
+                    <li><a href="">2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!--header end -->
+
+<div id="dowebok">
+    <div class="section section1">
+        <h1></h1>
+        <p></p>
+    </div>
+    <div class="section section2">
+        <div class="work container ">
+            <div class="work-box move">
+                <h1>美食</h1>
+                <ul class="work-card">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section section3 ">
+        <div class="work container ">
+            <div class="work-box move1">
+                <h1>yangsheng</h1>
+                <div class="swiper-container swiper-work work-card">
+                    <div class="swiper-wrapper work-thr-c">
+                        <div class="swiper-slide work-thr-con">
+
+                        </div>
+                        <div class="swiper-slide work-thr-con">
+
+                        </div>
+                        <div class="swiper-slide work-thr-con">
+
+                        </div>
+                        <div class="swiper-slide work-thr-con">
+
+                        </div>
+
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section4">
+        <div class="work container ">
+            <div class="work-box move2">
+                <h1>zatan</h1>
+                <div class="swiper-container swiper-work1 work-card">
+                    <div class="swiper-wrapper work-thr-c">
+                        <div class="swiper-slide work-thr-con">Slide 1</div>
+                        <div class="swiper-slide work-thr-con">Slide 2</div>
+                        <div class="swiper-slide work-thr-con">Slide 3</div>
+                        <div class="swiper-slide work-thr-con">Slide 4</div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer start-->
+<footer>
+    <div class="footer container">
+    </div>
+</footer>
+<!--footer end-->
+</body>
+</html>
+<script src="js/Project.js"></script>
+<script>
+    ///////////// swiper /////////////////
+    var swiper = new Swiper('.swiper-work', {
+        effect: 'cube',
+        grabCursor: true,
+        cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+    ///////////////////zatan///////////////////
+    var swiper1 = new Swiper('.swiper-work1', {
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
+    });
+    ////////////////fullpage//////////////////
+    $(function () {
+        $('#dowebok').fullpage({
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+            'navigation': true,
+
+            afterLoad: function (anchorLink, index) {
+                if (index == 2) {
+                    $('.section2').find('.work-box').delay(500).animate({
+                        left: '0'
+                    }, 1000, 'easeOutExpo');
+                }
+                if (index == 3) {
+                    $('.section3').find('.work-box').delay(500).animate({
+                        right: '0'
+                    }, 1000, 'easeOutExpo');
+                }
+                if (index == 4) {
+                    $('.section4').find('.work-box').fadeIn(2000);
+                }
+            },
+            onLeave: function (index, direction) {
+                if (index == '2') {
+                    $('.section2').find('.work-box').delay(500).animate({
+                        left: '-120%'
+                    }, 1000, 'easeOutExpo');
+                }
+                if (index == '3') {
+                    $('.section3').find('.work-box').delay(500).animate({
+                        right: '-120%'
+                    }, 1000, 'easeOutExpo');
+                }
+                if (index == '4') {
+                    $('.section4').find('.work-box').fadeOut(2000);
+                }
+            }
+        });
+
+
+    });
+</script>
+
+
+
